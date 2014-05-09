@@ -6,7 +6,7 @@
     <%= f.input :dosage %>
     <%= f.input :amount %>
     <%= f.input :start_date %>
-    <%= f.input :customer_id %>
+    <%= f.input :customer_id, :as => :hidden, :input_html => { :value => @customer.id } %>
   </div>
 
   <div class="form-actions">

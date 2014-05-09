@@ -14,7 +14,7 @@
     <%= f.input :contact_zip %>
     <%= f.input :contact_relationship %>
     <%= f.input :contact_photo %>
-    <%= f.input :customer_id %>
+    <%= f.input :customer_id, :as => :hidden, :input_html => { :value => @customer.id } %>
   </div>
 
   <div class="form-actions">

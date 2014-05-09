@@ -7,8 +7,7 @@
       <th>Dosage</th>
       <th>Amount</th>
       <th>Start date</th>
-      <th>Customer</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -19,9 +18,7 @@
         <td><%= med.dosage %></td>
         <td><%= med.amount %></td>
         <td><%= med.start_date %></td>
-        <td><%= med.customer_id %></td>
-        <td><%= link_to 'Show', med %></td>
-        <td><%= link_to 'Edit', edit_med_path(med) %></td>
+        <td><%= link_to 'Edit', edit_customer_med_path(@customer,med) %></td>
         <td><%= link_to 'Destroy', med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -30,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Med', new_med_path %>
+<%= link_to 'New Med', new_customer_med_path(@customer) %>

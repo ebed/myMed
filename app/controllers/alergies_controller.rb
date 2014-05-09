@@ -1,5 +1,10 @@
 class AlergiesController < ApplicationController
   before_action :set_alergy, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer
+
+  def set_customer
+    @customer = Customer.find_by_id(params[:customer_id])
+  end 
 
   # GET /alergies
   # GET /alergies.json
@@ -24,12 +29,13 @@ class AlergiesController < ApplicationController
   # POST /alergies
   # POST /alergies.json
   def create
+ 
     @alergy = Alergy.new(alergy_params)
-
+    
     respond_to do |format|
       if @alergy.save
-        format.html { redirect_to @alergy, notice: 'Alergy was successfully created.' }
-        format.json { render :show, status: :created, location: @alergy }
+        format.html { redirect_to customer_alergies_path(@alergy.customer_id), notice: 'Alergy was successfully created.' }
+        format.json { render :show, status: :created, location: customer_alergies_path(@alergy.customer_id)}
       else
         format.html { render :new }
         format.json { render json: @alergy.errors, status: :unprocessable_entity }
@@ -42,8 +48,8 @@ class AlergiesController < ApplicationController
   def update
     respond_to do |format|
       if @alergy.update(alergy_params)
-        format.html { redirect_to @alergy, notice: 'Alergy was successfully updated.' }
-        format.json { render :show, status: :ok, location: @alergy }
+        format.html { redirect_to customer_alergies_path(@alergy.customer_id), notice: 'Alergy was successfully updated.' }
+        format.json { render :show, status: :ok, location: customer_alergies_path(@alergy.customer_id) }
       else
         format.html { render :edit }
         format.json { render json: @alergy.errors, status: :unprocessable_entity }
@@ -56,7 +62,7 @@ class AlergiesController < ApplicationController
   def destroy
     @alergy.destroy
     respond_to do |format|
-      format.html { redirect_to alergies_url, notice: 'Alergy was successfully destroyed.' }
+      format.html { redirect_to customer_alergies_path(@alergy.customer_id), notice: 'Alergy was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,4 +77,5 @@ class AlergiesController < ApplicationController
     def alergy_params
       params.require(:alergy).permit(:alergy_name, :start_date, :customer_id)
     end
+
 end

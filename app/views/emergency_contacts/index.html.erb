@@ -1,4 +1,4 @@
-<h1>Listing emergency_contacts</h1>
+<h1>Listing Emergency Contacts</h1>
 
 <table>
   <thead>
@@ -6,38 +6,36 @@
       <th>Fname</th>
       <th>Lname</th>
       <th>Contact phone</th>
-      <th>Contact mob phone</th>
-      <th>Contact email</th>
-      <th>Contact address</th>
-      <th>Contact city</th>
-      <th>Contact state</th>
-      <th>Contact country</th>
-      <th>Contact zip</th>
+      <th>Mobile phone</th>
+      <th>Email</th>
+      <th>Adress</th>
       <th>Contact relationship</th>
       <th>Contact photo</th>
-      <th>Costumer</th>
-      <th colspan="3"></th>
+
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @emergency_contacts.each do |emergency_contact| %>
+    <% for emergency_contact in @emergency_contacts do  %>
       <tr>
         <td><%= emergency_contact.fname %></td>
         <td><%= emergency_contact.lname %></td>
         <td><%= emergency_contact.contact_phone %></td>
         <td><%= emergency_contact.contact_mob_phone %></td>
         <td><%= emergency_contact.contact_email %></td>
-        <td><%= emergency_contact.contact_address %></td>
-        <td><%= emergency_contact.contact_city %></td>
-        <td><%= emergency_contact.contact_state %></td>
-        <td><%= emergency_contact.contact_country %></td>
-        <td><%= emergency_contact.contact_zip %></td>
+        <td>
+          <%= emergency_contact.contact_address %> 
+          <%= emergency_contact.contact_city %>
+          <%= emergency_contact.contact_state %>
+          <%= emergency_contact.contact_country %>
+          <%= emergency_contact.contact_zip %>
+        </td>
+
         <td><%= emergency_contact.contact_relationship %></td>
         <td><%= emergency_contact.contact_photo %></td>
-        <td><%= emergency_contact.customer_id %></td>
-        <td><%= link_to 'Show', emergency_contact %></td>
-        <td><%= link_to 'Edit', edit_emergency_contact_path(emergency_contact) %></td>
+        
+        <td><%= link_to 'Edit', edit_customer_emergency_contact_path(@customer,emergency_contact) %></td>
         <td><%= link_to 'Destroy', emergency_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -46,4 +44,4 @@
 
 <br>
 
-<%= link_to 'New Emergency contact', new_emergency_contact_path %>
+<%= link_to 'New Emergency contact', new_customer_emergency_contact_path(@customer) %>

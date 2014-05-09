@@ -1,5 +1,10 @@
 class MedProfilesController < ApplicationController
   before_action :set_med_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer
+
+  def set_customer
+    @customer = Customer.find_by_id(params[:customer_id])
+  end 
 
   # GET /med_profiles
   # GET /med_profiles.json
@@ -28,8 +33,8 @@ class MedProfilesController < ApplicationController
 
     respond_to do |format|
       if @med_profile.save
-        format.html { redirect_to @med_profile, notice: 'Med profile was successfully created.' }
-        format.json { render :show, status: :created, location: @med_profile }
+        format.html { redirect_to customer_med_profiles_path(@med_profile.customer_id), notice: 'Med profile was successfully created.' }
+        format.json { render :show, status: :created, location: customer_med_profiles_path(@med_profile.customer_id) }
       else
         format.html { render :new }
         format.json { render json: @med_profile.errors, status: :unprocessable_entity }
@@ -42,8 +47,8 @@ class MedProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @med_profile.update(med_profile_params)
-        format.html { redirect_to @med_profile, notice: 'Med profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @med_profile }
+        format.html { redirect_to customer_med_profiles_path(@med_profile.customer_id), notice: 'Med profile was successfully updated.' }
+        format.json { render :show, status: :ok, location: customer_med_profiles_path(@med_profile.customer_id) }
       else
         format.html { render :edit }
         format.json { render json: @med_profile.errors, status: :unprocessable_entity }
@@ -56,7 +61,7 @@ class MedProfilesController < ApplicationController
   def destroy
     @med_profile.destroy
     respond_to do |format|
-      format.html { redirect_to med_profiles_url, notice: 'Med profile was successfully destroyed.' }
+      format.html { redirect_to customer_med_profiles_path(@med_profile.customer_id), notice: 'Med profile was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

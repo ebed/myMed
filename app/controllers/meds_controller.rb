@@ -1,5 +1,10 @@
 class MedsController < ApplicationController
   before_action :set_med, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer
+
+  def set_customer
+    @customer = Customer.find_by_id(params[:customer_id])
+  end 
 
   # GET /meds
   # GET /meds.json
@@ -28,8 +33,8 @@ class MedsController < ApplicationController
 
     respond_to do |format|
       if @med.save
-        format.html { redirect_to @med, notice: 'Med was successfully created.' }
-        format.json { render :show, status: :created, location: @med }
+        format.html { redirect_to customer_meds_path(@med.customer_id), notice: 'Med was successfully created.' }
+        format.json { render :show, status: :created, location: customer_meds_path(@med.customer_id) }
       else
         format.html { render :new }
         format.json { render json: @med.errors, status: :unprocessable_entity }
@@ -42,8 +47,8 @@ class MedsController < ApplicationController
   def update
     respond_to do |format|
       if @med.update(med_params)
-        format.html { redirect_to @med, notice: 'Med was successfully updated.' }
-        format.json { render :show, status: :ok, location: @med }
+        format.html { redirect_to customer_meds_path(@med.customer_id), notice: 'Med was successfully updated.' }
+        format.json { render :show, status: :ok, location: customer_meds_path(@med.customer_id) }
       else
         format.html { render :edit }
         format.json { render json: @med.errors, status: :unprocessable_entity }
@@ -56,7 +61,7 @@ class MedsController < ApplicationController
   def destroy
     @med.destroy
     respond_to do |format|
-      format.html { redirect_to meds_url, notice: 'Med was successfully destroyed.' }
+      format.html { redirect_to customer_meds_path(@med.customer_id), notice: 'Med was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
