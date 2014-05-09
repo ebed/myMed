@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @emergency_contact.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @emergency_contact.lname %>
+</p>
+
+<p>
+  <strong>Contact phone:</strong>
+  <%= @emergency_contact.contact_phone %>
+</p>
+
+<p>
+  <strong>Contact mob phone:</strong>
+  <%= @emergency_contact.contact_mob_phone %>
+</p>
+
+<p>
+  <strong>Contact email:</strong>
+  <%= @emergency_contact.contact_email %>
+</p>
+
+<p>
+  <strong>Contact address:</strong>
+  <%= @emergency_contact.contact_address %>
+</p>
+
+<p>
+  <strong>Contact city:</strong>
+  <%= @emergency_contact.contact_city %>
+</p>
+
+<p>
+  <strong>Contact state:</strong>
+  <%= @emergency_contact.contact_state %>
+</p>
+
+<p>
+  <strong>Contact country:</strong>
+  <%= @emergency_contact.contact_country %>
+</p>
+
+<p>
+  <strong>Contact zip:</strong>
+  <%= @emergency_contact.contact_zip %>
+</p>
+
+<p>
+  <strong>Contact relationship:</strong>
+  <%= @emergency_contact.contact_relationship %>
+</p>
+
+<p>
+  <strong>Contact photo:</strong>
+  <%= @emergency_contact.contact_photo %>
+</p>
+
+<p>
+  <strong>Costumer:</strong>
+  <%= @emergency_contact.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_emergency_contact_path(@emergency_contact) %> |
+<%= link_to 'Back', emergency_contacts_path %>

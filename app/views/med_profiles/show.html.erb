@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @med_profile.condition %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @med_profile.start_date %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @med_profile.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_med_profile_path(@med_profile) %> |
+<%= link_to 'Back', med_profiles_path %>

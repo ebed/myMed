@@ -1,0 +1,29 @@
+<h1>Listing med_profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Start date</th>
+      <th>Customer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @med_profiles.each do |med_profile| %>
+      <tr>
+        <td><%= med_profile.condition %></td>
+        <td><%= med_profile.start_date %></td>
+        <td><%= med_profile.customer_id %></td>
+        <td><%= link_to 'Show', med_profile %></td>
+        <td><%= link_to 'Edit', edit_med_profile_path(med_profile) %></td>
+        <td><%= link_to 'Destroy', med_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Med profile', new_med_profile_path %>

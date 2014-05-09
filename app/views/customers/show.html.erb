@@ -1,0 +1,160 @@
+<p id="notice"><%= notice %></p>
+<div class='showCustomer'>
+<div class='datos'>
+
+<p><%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
+</p>
+
+<p>
+<h4>Personal Data</h4>
+</p>
+<p>
+  <strong>First name:</strong>
+  <%= @customer.first_name %>
+</p>
+
+<p>
+  <strong>Mid initial:</strong>
+  <%= @customer.mid_initial %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <strong>Bod:</strong>
+  <%= @customer.bod %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @customer.sex %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @customer.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @customer.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @customer.pais %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @customer.zip %>
+</p>
+
+<p>
+  <strong>Mob phone:</strong>
+  <%= @customer.mob_phone %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @customer.picture %>
+</p>
+</div>
+<div class="extras">
+  <div class="doctors">
+    <h5>Doctores</h5>
+      <table class="listDoctors">
+        <tr><th>Name</th><th>Specialty</th><th>Email</th><th>Phone</th></tr>
+        <% for doctors in @customer.doctors %>
+           
+              <td align='center'>
+                <%= doctors.doctor_fname %> 
+                <%= doctors.doctor_lname %> 
+              </td>
+              <td align='center'>            
+                <%= doctors.doctor_specialty %>
+              </td>
+              <td align='center'>
+               <%= doctors.doctor_email %>
+              </td>
+              <td align='center'>
+                <%= doctors.doctor_phone %>
+              </td>
+        <% end %>
+      </table>
+  </div>
+  <div class="meds">
+    <h5>Medicinas</h5>
+      <table class="listMeds">
+        <tr><th>Name</th><th>Dosage</th><th>Amount</th></tr>
+        <% for meds in @customer.meds %>
+          <tr>
+              <td align='center'><%= meds.med_name %></td>
+              <td align='center'><%= meds.dosage %></td>
+              <td align='center'><%= meds.amount %></td>
+          </tr>
+        <% end %>
+      </table>
+  </div>
+  <div class="contacts">
+
+    <h5>Contactos</h5>
+      <table class="listContacts">
+        <tr><th>Name</th><th>Relation</th><th>Email</th><th>Phone</th><th>Mobile Phone</th></tr>
+
+       <% for contact in @customer.emergency_contacts %>
+        <tr>  <td align='center'><%= contact.fname %> <%= contact.lname %></td>
+           <td align='center'> <%= contact.contact_relationship %></td>
+           <td align='center'> <%= contact.contact_email %></td>
+           <td align='center'> <%= contact.contact_phone %> </td>
+           <td align='center'> <%= contact.contact_mob_phone %></td>
+           </tr>
+        <% end %>
+
+      </table>
+
+  </div>
+  <div class="alergies">
+    <h5>Alergias</h5>
+     <table class="listAlergies">
+        <tr><th>Name</th><th>Start Date</th></tr>
+          <% for alergies in @customer.alergies %>
+            <tr>
+              <td align='center'>  <%= alergies.alergy_name %> </td>
+              <td align='center'>  <%= alergies.start_date %> </td>
+            </tr>
+          <% end %>
+        </table>
+  </div>
+  <div class="profile">
+    <h5>Perfil medico</h5>
+      <table class="listProfiles">
+        <tr><th>Condition</th><th>Start Date</th></tr>
+          <% for profile in @customer.med_profiles %>
+            <tr>
+              <td align='center'><%= profile.condition %></td>
+            </tr>
+             <tr>
+              <td align='center'><%= profile.start_date %></td>
+            </tr>
+          <% end %>
+      </table>
+  </div>
+</div>
+
+</div>
+

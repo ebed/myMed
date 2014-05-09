@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Med name:</strong>
+  <%= @med.med_name %>
+</p>
+
+<p>
+  <strong>Dosage:</strong>
+  <%= @med.dosage %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @med.amount %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @med.start_date %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @med.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_med_path(@med) %> |
+<%= link_to 'Back', meds_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  med_name: MyString
+  dosage: MyString
+  amount: MyString
+  start_date: 2014-05-08
+  customer_id: 1
+
+two:
+  med_name: MyString
+  dosage: MyString
+  amount: MyString
+  start_date: 2014-05-08
+  customer_id: 1

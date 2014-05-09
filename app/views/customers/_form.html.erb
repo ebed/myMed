@@ -1,0 +1,24 @@
+<%= simple_form_for(@customer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :mid_initial %>
+    <%= f.input :last_name %>
+    <%= f.input :bod, label: 'Birthday'%>
+    <%= f.input :sex, collection: [:Male, :Female]%>
+    <%= f.input :pais, label: t('country'),as: :country%>
+    <%= f.input :state %>
+    <%= f.input :city %>
+    <%= f.input :address %>
+    
+    <%= f.input :zip %>
+    <%= f.input :mob_phone, label: 'Mobile Phone' %>
+    <%= f.input :phone %>
+    <%= f.input :picture %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

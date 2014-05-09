@@ -1,0 +1,21 @@
+<%= simple_form_for(@doctor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :doctor_fname %>
+    <%= f.input :doctor_lname %>
+    <%= f.input :doctor_specialty %>
+    <%= f.input :doctor_phone %>
+    <%= f.input :doctor_email %>
+    <%= f.input :doctor_address %>
+    <%= f.input :doctor_city %>
+    <%= f.input :doctor_state %>
+    <%= f.input :doctor_country %>
+    <%= f.input :doctor_zip %>
+    <%= f.input :customer_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
