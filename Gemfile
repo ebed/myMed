@@ -8,7 +8,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'countries'
 gem 'bootstrap-sass'
-
+gem 'acts_more_seo'
 group :assets do  
   # Use CoffeeScript for .js.coffee assets and views
   gem 'coffee-rails', '~> 4.0.0'

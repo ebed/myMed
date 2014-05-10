@@ -81,6 +81,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Options</li>
+              <li><%= link_to "My Information", customer_path(current_customer)  %></li>
               <li><%= link_to "Alergies", customer_alergies_path(current_customer)  %></li>
               <li><%= link_to "Contacts",  customer_emergency_contacts_path(current_customer)   %></li>
               <li><%= link_to "Doctors",  customer_doctors_path(current_customer)   %></li>

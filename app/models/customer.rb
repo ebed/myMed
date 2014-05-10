@@ -9,6 +9,6 @@ class Customer < ActiveRecord::Base
   has_many :meds
   has_many :med_profiles
   accepts_nested_attributes_for :doctors, :med_profiles, :meds, :emergency_contacts, :alergies
-
+  acts_more_seo :email
 end
  	
