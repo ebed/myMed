@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
           </a>
           <% if customer_signed_in? %>
-            <%= link_to 'MyMed', customer_path(@customer) , :class => 'brand' %>
+            <%= link_to 'MyMed', customer_path(current_customer) , :class => 'brand' %>
           <% else %>
             <a class="brand" href="/">MyMed</a>
           <% end %>
@@ -81,11 +81,11 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Options</li>
-              <li><%= link_to "Alergies", customer_alergies_path(@customer)  %></li>
-              <li><%= link_to "Contacts",  customer_emergency_contacts_path(@customer)   %></li>
-              <li><%= link_to "Doctors",  customer_doctors_path(@customer)   %></li>
-              <li><%= link_to "Meds",  customer_meds_path(@customer) %></li>
-              <li><%= link_to "Med Profile",  customer_med_profiles_path(@customer) %></li>
+              <li><%= link_to "Alergies", customer_alergies_path(current_customer)  %></li>
+              <li><%= link_to "Contacts",  customer_emergency_contacts_path(current_customer)   %></li>
+              <li><%= link_to "Doctors",  customer_doctors_path(current_customer)   %></li>
+              <li><%= link_to "Meds",  customer_meds_path(current_customer) %></li>
+              <li><%= link_to "Med Profile",  customer_med_profiles_path(current_customer) %></li>
             </ul>
           </div><!--/.well -->
         <% end %>

@@ -13,6 +13,6 @@ class StaticPagesController < ApplicationController
   		redirect_to  new_customer_session_path
   	else
   		redirect_to customers_path
-  	end
+  	end	
   end
 end
