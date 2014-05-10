@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  get 'static_pages/help'
 
-  get 'static_pages/about'
-
-  get 'static_pages/contact'
 
 
   match '/help', :to => 'static_pages#help', via: [:get, :post]
   match '/about', :to => 'static_pages#about', via: [:get, :post]
   match '/contact', :to => 'static_pages#contact', via: [:get, :post]
+  match '/home', :to => 'static_pages#home', via: [:get, :post]
 
   resources :emergency_contacts
 
@@ -31,13 +28,16 @@ Rails.application.routes.draw do
     resources :alergies
 
     resources :med_profiles
+
+
   end
 
 
 
 
-
- root to: redirect("customers/sessions#new")
+ root to: redirect("/home")
+  #root to: redirect("customers/sessions#new")
+ get '*path' => redirect('/home')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
