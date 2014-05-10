@@ -5,7 +5,7 @@
     <%= f.input :first_name %>
     <%= f.input :mid_initial %>
     <%= f.input :last_name %>
-    <%= f.input :bod, label: 'Birthday'%>
+    <%= f.input :bod, label: 'Birthday', start_year: Time.now.year - 100, end_year: Time.now.year %>
     <%= f.input :sex, collection: [:Male, :Female]%>
     <%= f.input :pais, label: t('country'),as: :country%>
     <%= f.input :state %>
