@@ -9,7 +9,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'countries'
 gem 'bootstrap-sass'
-gem 'bootstrap-datepicker-rails'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
