@@ -36,7 +36,9 @@
         <td><%= emergency_contact.contact_photo %></td>
         
         <td><%= link_to 'Edit', edit_customer_emergency_contact_path(@customer,emergency_contact) %></td>
-        <td><%= link_to 'Destroy', emergency_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', customer_emergency_contact_path(@customer, emergency_contact), method: :delete,  data: { confirm: 'Are you sure?' } %>
+       
+        </td>
       </tr>
     <% end %>
   </tbody>

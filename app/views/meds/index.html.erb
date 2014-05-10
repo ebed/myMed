@@ -19,7 +19,7 @@
         <td><%= med.amount %></td>
         <td><%= med.start_date %></td>
         <td><%= link_to 'Edit', edit_customer_med_path(@customer,med) %></td>
-        <td><%= link_to 'Destroy', med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', customer_med_path(@customer, med), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
