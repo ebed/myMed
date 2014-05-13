@@ -1,9 +1,9 @@
-<%= simple_form_for(@alergy) do |f| %>
+<%= simple_form_for [@customer, @alergy] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :alergy_name %>
-    <%= f.input :start_date %>
+    <%= f.input :start_date, start_year: Time.now.year - 100, end_year: Time.now.year  %>
     <%= f.input :customer_id, :as => :hidden, :input_html => { :value => @customer.id } %>
    
   </div>
