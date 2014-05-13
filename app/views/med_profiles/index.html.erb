@@ -16,7 +16,7 @@
         <td><%= med_profile.start_date %></td>
        
         <td><%= link_to 'Edit', edit_customer_med_profile_path(@customer, med_profile) %></td>
-        <td><%= link_to 'Destroy', edit_customer_med_profile_path(@customer, med_profile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', customer_med_profile_path(@customer, med_profile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
