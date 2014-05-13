@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
+
 gem "paperclip", "~> 4.1"
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
+gem 'papertrail'
 
 gem 'devise'
 gem 'simple_form'
