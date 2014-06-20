@@ -1,11 +1,14 @@
-class CustomersController < ApplicationController
+  class CustomersController < ApplicationController
+    respond_to :json, :html
+ #acts_as_token_authenticatable
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
   # GET /customers.json
   def index
-    redirect_to home_path
-    #@customers = Customer.all
+   # redirect_to home_path
+    @customers = Customer.all
+   
   end
 
   # GET /customers/1
@@ -70,6 +73,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:first_name, :mid_initial, :last_name, :bod, :sex, :address, :city, :state, :pais, :zip, :mob_phone, :phone)
+      params.require(:customer).permit(:first_name, :mid_initial, :last_name, :bod, :sex, :address, :city, :state, :pais, :zip, :mob_phone, :phone, :authentication_token)
     end
 end

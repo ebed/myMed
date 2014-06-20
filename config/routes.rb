@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   match '/contact', :to => 'static_pages#contact', via: [:get, :post]
   match '/home', :to => 'static_pages#home', via: [:get, :post]
 
- 
 
+ 
+ #  resources :doctors
   devise_for :customers
+ # devise_for(:customers, :controllers => { :sessions => "sessions" })
   resources :customers do
     resources :emergency_contacts
 
@@ -21,7 +23,14 @@ Rails.application.routes.draw do
 
     resources :med_profiles
 
-
+namespace :api do
+  namespace :v1 do
+    devise_scope :user do
+      post 'sessions' => 'sessions#create', :as => 'login'
+      delete 'sessions' => 'sessions#destroy', :as => 'logout'
+    end
+  end
+end
   end
 
 
