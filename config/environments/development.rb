@@ -50,6 +50,12 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
-
+config.middleware.use Rack::Cors do
+  allow do
+    origins 'localhost:5000'
+    resource '*', :headers => :any, :methods => [:get, :post, :options, :delete]
+  end
+end
 
 end
+
