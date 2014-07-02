@@ -1,1 +1,1 @@
-json.extract! @doctor, :id, :doctor_fname, :doctor_fname, :doctor_specialty, :doctor_phone, :doctor_email, :doctor_address, :doctor_city, :doctor_state, :doctor_country, :doctor_zip, :customer_id, :created_at, :updated_at
+json.extract! @doctor, :id, :doctor_fname, :doctor_lname, :doctor_specialty, :doctor_phone, :doctor_email, :doctor_address, :doctor_city, :doctor_state, :doctor_country, :doctor_zip, :customer_id, :created_at, :updated_at
