@@ -55,5 +55,5 @@
   <%= @doctor.customer_id %>
 </p>
 
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+<%= link_to 'Edit', edit_customer_doctor_path(:customer_id, @doctor) %> |
+<%= link_to 'Back', customer_doctors_path %>

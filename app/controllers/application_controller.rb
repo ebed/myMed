@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 	  protect_from_forgery with: :exception
 	  protect_from_forgery except: :sign_in
 	  rescue_from ActiveRecord::RecordNotFound, :with => :rescue_not_found
+	  skip_before_filter :verify_authenticity_token
 	##  acts_as_token_authentication_handler_for Customer
 	  
 	##  before_filter :authenticate_customer_from_token!

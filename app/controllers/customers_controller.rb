@@ -2,7 +2,7 @@
     respond_to :json, :html
  #acts_as_token_authenticatable
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-
+skip_before_filter :verify_authenticity_token
   # GET /customers
   # GET /customers.json
   def index

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   match '/about', :to => 'static_pages#about', via: [:get, :post]
   match '/contact', :to => 'static_pages#contact', via: [:get, :post]
   match '/home', :to => 'static_pages#home', via: [:get, :post]
-
+  match 'emergency_contacts', :to => 'emergency_contacts#index', via: [:options]
 
  
  #  resources :doctors
